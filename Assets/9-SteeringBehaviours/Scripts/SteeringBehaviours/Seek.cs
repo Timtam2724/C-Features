@@ -8,7 +8,7 @@ namespace AI
     {
         public Transform target;
         public float stoppingDistance = 1f;
-
+        
         public override Vector3 GetForce()
         {
             // SET force to Vector3 zero
