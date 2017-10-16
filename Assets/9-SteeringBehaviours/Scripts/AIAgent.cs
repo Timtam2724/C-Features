@@ -53,8 +53,8 @@ namespace AI
         {
             // SET velocity = velocity + force x deltaTime
             velocity = velocity + force * Time.deltaTime;
-            // IF velocity > maxVelocity
-            if (velocity > maxVelocity)
+            // IF velocity.magnitude > maxVelocity
+            if (velocity.magnitude > maxVelocity)
             {
                 // SET velocity = velocity.normalized x maxVelocity
                 velocity = velocity.normalized * maxVelocity;
