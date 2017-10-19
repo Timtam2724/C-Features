@@ -5,11 +5,12 @@ using GGL;
 
 namespace AI
 {
-    public class Seek : SteeringBehaviour
+    public class Flee : SteeringBehaviour
     {
+
         public Transform target;
         public float stoppingDistance = 1f;
-        
+
         public override Vector3 GetForce()
         {
             // SET force to Vector3 zero
@@ -22,9 +23,10 @@ namespace AI
             }
 
             // LET desiredForce = target position - transform position
-            var desiredForce = target.position - transform.position;
+            var desiredForce = transform.position - target.position;
             // IF desiredForce magnitude > stopping Distance
-            if (desiredForce.magnitude > stoppingDistance) {
+            if (desiredForce.magnitude > stoppingDistance)
+            {
                 // desiredForce = desiredForce normalized x weighting
                 desiredForce = desiredForce.normalized * weighting;
                 // force = desiredForce - owner.velocity
