@@ -70,7 +70,7 @@ namespace MOBA
                 velocity = velocity.normalized * maxSpeed;
             }
             // Is there a velocity?
-            if(velocity.magnitude > 0)
+            if(velocity.magnitude > 0 && nav.updatePosition)
             {
                 // Is velocity over maxSpeed?
                 if(velocity.magnitude > maxSpeed)
