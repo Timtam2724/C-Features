@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 using GGL;
 
+/*
+* Obtains user selection on the nav mesh and
+* 'directs' all agents to that location using either
+* Seek or PathFollwing behaviours
+*/
+
 namespace MOBA
 {
     [RequireComponent(typeof(Camera))]
@@ -33,6 +39,12 @@ namespace MOBA
                 // Is seek attached to agent?
                 if (s != null)
                     s.target = target; // Assign target to seek component on agent
+
+                // PathFollowing
+                PathFollowing p = agent.GetComponent<PathFollowing>();
+                // Is PathFollowing attached to agent?
+                if(p != null)                
+                    p.target = target; // Assign target to PathFollowing component on agent                
             }
         }
 
