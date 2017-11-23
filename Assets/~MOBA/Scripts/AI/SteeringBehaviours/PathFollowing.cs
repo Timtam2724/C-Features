@@ -117,6 +117,10 @@ namespace MOBA
                             //Move to next node
                             currentNode++;
                         }
+                        // Is the agent at the target
+                        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                        isAtTarget = distanceToTarget <= targetRadius;
+                        
                         // Seek towards current node's position
                         force = Seek(currentPos);
                     }
